@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Args x, y, z, roll, pitch, yaw, definem a posição do wam-v 1, não alterar arg sdf_robot_file -->
+    <include file="$(find offshore_uav_pack)/launch/spawn_sdf.launch">
+        <arg name="robot_name" value="wamv1"/>
+        <arg name="x" value="15.0" />
+        <arg name="y" value="-15.0" />
+        <arg name="z" value="0.2" />
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0.0" />
+        <arg name="sdf_robot_file" value="$(find asv_wave_sim_gazebo)/models/wam-v/model.sdf" />
+    </include>
+</launch>

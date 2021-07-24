@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Paint_-_Enamel_Glossy_(White).001
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.964706 0.964706 0.952941
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd materials/C_Prancheta_1.png

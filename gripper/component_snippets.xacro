@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!-- Put this lines in this file ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/component_snippets.xacro -->
+<!-- Look for " Macro for visualization of mash with collision " and put this lines below this macro (something around line 160) -->
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+
+ <!-- Macro for visualization of mash with collision and joint {-->
+  <xacro:macro name="visual_macro_with_collision_joint"
+    params="robot_namespace name mesh_file mesh_scale color parent joint damping friction upper lower effort velocity axis mass ixx ixy ixz iyy iyz izz *origin">
+    
+    <joint name="${name}_joint" type="${joint}">
+      <xacro:insert_block name="origin" />
+      <axis xyz="${axis}" />
+      <dynamics damping="${damping}" friction="${friction}"/>
+      <limit upper="${upper}" lower="${lower}" effort="${effort}" velocity="${velocity}" />
+      <parent link="${parent}" />
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="${mesh_file}" scale="${mesh_scale}" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="${mesh_file}" scale="${mesh_scale}" />
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>100</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <inertial>
+        <mass value="${mass}" />
+        <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+      </inertial>
+    </link>
+
+    <gazebo reference="${name}_link">
+      <mu1>100</mu1>
+      <mu2>100</mu2>
+      <material>Gazebo/${color}</material>
+    </gazebo>
+
+  </xacro:macro>
+  <!--}-->
+
+<!-- Macro for define transmission joints {-->
+
+<xacro:macro name="transmissions_joints"
+  params="robot_namespace name1 name2 name3">
+
+  <transmission name="${name1}_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="${name1}_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="${name1}_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="${name2}_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="${name2}_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="${name2}_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <transmission name="${name3}_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="${name3}_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="${name3}_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>${robot_namespace}</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+</xacro:macro>
+<!--}-->
+
+
+<!-- Macro for visualization of mash with collision and joint fixed {-->
+  <xacro:macro name="visual_macro_with_collision_joint_fixed"
+    params="robot_namespace name mesh_file mesh_scale color parent mass ixx ixy ixz iyy iyz izz *origin">
+    
+    <joint name="${name}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${name}_link" />
+    </joint>
+
+    <link name="${name}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="${mesh_file}" scale="${mesh_scale}" />
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="${mesh_file}" scale="${mesh_scale}" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${mass}" />
+        <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>
+      </inertial>
+    </link>
+
+
+    <gazebo reference="${name}_link">
+      <material>Gazebo/${color}</material>
+    </gazebo>
+
+  </xacro:macro>
+  <!--}-->
+
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->

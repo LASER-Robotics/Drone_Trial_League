@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>controller_g</name>
+  <version>0.0.0</version>
+  <description>The gripper_controller package</description>
+
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
+  <!-- Example:  -->
+  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+  <maintainer email="jorge.luiz.henri@hotmail.com"> Jorge Luiz Henriques de Araujo Junior</maintainer>
+ 
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>nodelet</depend>
+  <depend>controller_g_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>mrs_lib</depend>
+  <depend>mrs_msgs</depend>
+
+  <export>
+    <nodelet plugin="${prefix}/plugins.xml" />
+  </export>
+</package>

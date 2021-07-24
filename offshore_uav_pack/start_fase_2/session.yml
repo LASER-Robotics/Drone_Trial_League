@@ -1,0 +1,36 @@
+name: simulation
+root: ./
+startup_window: status
+pre_window: export UAV_NAME=uav1; export USV_NAME=wamv1; export WORLD_FILE=./world.yaml; export RUN_TYPE=simulation; export UAV_TYPE=t650; export WORLD_NAME=simulation; export SENSORS="garmin_down"
+windows:
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - gazebo:
+      layout: tiled
+      panes:
+        - waitForRos; roslaunch offshore_uav_pack offshore_rig.launch "world_name:=fase2"
+  - status:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch mrs_uav_status status.launch
+  - spawn:
+      layout: tiled
+      panes:
+        - waitForSimulation; rosservice call /mrs_drone_spawner/spawn "1 $UAV_TYPE --enable-rangefinder --enable-ground-truth --pos_file `pwd`/uav1_pos.yaml --enable-rplidar --enable-bluefox-camera --enable_mechanic_gripper"
+        - 'history -s roslaunch offshore_uav_pack spawn_wamv1.launch ";" 
+          roslaunch offshore_uav_pack spawn_wamv2.launch ";"
+          roslaunch offshore_uav_pack spawn_wamv3.launch'
+  - control:
+      layout: tiled
+      panes:
+        - waitForOdometry; roslaunch mrs_uav_general core.launch config_control_manager:=./custom_configs/control_manager.yaml config_odometry:=./custom_configs/odometry.yaml
+  - takeoff:
+      layout: tiled
+      panes:
+        - waitForSimulation; roslaunch mrs_uav_general automatic_start.launch
+        - 'waitForControl;
+          rosservice call /$UAV_NAME/mavros/cmd/arming 1;
+          sleep 2;
+          rosservice call /$UAV_NAME/mavros/set_mode 0 offboard'

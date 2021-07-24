@@ -1,0 +1,17 @@
+# Blender v2.83.5 OBJ File: 'Arena.blend'
+# www.blender.org
+mtllib banner.mtl
+o Banner_Plane
+v -0.374957 -7.950174 0.541090
+v -6.234104 -7.950174 0.541093
+v -0.374956 -7.950174 3.509250
+v -6.234102 -7.950174 3.509253
+vt 0.000000 0.000000
+vt 1.000000 0.000000
+vt 1.000000 1.000000
+vt 0.000000 1.000000
+vn 0.0000 1.0000 0.0000
+g Banner_Plane_Material
+usemtl Material
+s off
+f 1/1/1 2/2/1 4/3/1 3/4/1

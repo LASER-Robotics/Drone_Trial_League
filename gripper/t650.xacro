@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!-- Put this lines in this file ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/t650.xacro -->
+<!-- Look for " holders " and add this lines below the last xacro property (something around line 98) -->
+
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+  <xacro:property name="gripper_mecha_left_mesh" value="package://mrs_robots_description/meshes/tarot/t650/tarot_t650_gripper_mecha_left.dae" />
+  <xacro:property name="gripper_mecha_right_mesh" value="package://mrs_robots_description/meshes/tarot/t650/tarot_t650_gripper_mecha_right.dae" />
+  <xacro:property name="gripper_mecha_mount_center_mesh" value="package://mrs_robots_description/meshes/tarot/t650/tarot_t650_gripper_mecha_mount_center.dae" />
+  <xacro:property name="gripper_mecha_mount_stretcher_mesh" value="package://mrs_robots_description/meshes/tarot/t650/tarot_t650_gripper_mecha_mount_stretcher.dae" />
+  <xacro:property name="gripper_mecha_mount_battery_mesh" value="package://mrs_robots_description/meshes/tarot/t650/tarot_t650_gripper_mecha_mount_battery.dae" />
+
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+
+<!-- Look for " UVDAR mount " and add this lines below this xacro (something around line 1350) -->
+
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->
+
+  <!-- Gripper mecha all {-->
+
+  <!-- gripper mecha left visual {-->
+  <xacro:if value="${optionals['enable_mechanic_gripper']}">
+    <xacro:visual_macro_with_collision_joint
+      robot_namespace="${namespace}"
+      name="gripper_mecha_left"
+      mesh_file="${gripper_mecha_left_mesh}"
+      mesh_scale="${mesh_scale_milimeters}"
+      parent="gripper_mecha_mount_stretcher_link"
+      joint="continuous"
+      axis="0 0 1"
+      damping="0.7"
+      friction="0.7" 
+      upper="0.04"
+      lower="0.0"
+      effort="20"
+      velocity="0.2"
+      mass="0.1"
+      ixx="0.17"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="0.17"
+      iyz="0.0"
+      izz="0.17"
+      color="Blue">
+    <origin xyz="-0.16385 -0.033729 -0.015" rpy="${rad180} 0 0" />
+    </xacro:visual_macro_with_collision_joint>
+  </xacro:if>
+
+  <!-- gripper mecha right {-->
+  <xacro:if value="${optionals['enable_mechanic_gripper']}">
+    <xacro:visual_macro_with_collision_joint
+      robot_namespace="${namespace}"
+      name="gripper_mecha_right"
+      mesh_file="${gripper_mecha_right_mesh}"
+      mesh_scale="${mesh_scale_milimeters}"
+      parent="gripper_mecha_mount_stretcher_link"
+      joint="continuous"
+      axis="0 0 1"
+      damping="0.7"
+      friction="0.7" 
+      upper="0.04"
+      lower="0.0"
+      effort="20"
+      velocity="0.2"
+      mass="0.1"
+      ixx="0.17"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="0.17"
+      iyz="0.0"
+      izz="0.17"
+      color="Blue">
+    <origin xyz="-0.16385 0.033763 -0.015" rpy="${rad180} 0 0" />
+    </xacro:visual_macro_with_collision_joint>
+  </xacro:if>
+
+  <!-- gripper mecha mount center {-->
+  <xacro:if value="${optionals['enable_mechanic_gripper']}">
+    <xacro:visual_macro_with_collision_joint_fixed
+      robot_namespace="${namespace}"
+      name="gripper_mecha_mount_center"
+      mesh_file="${gripper_mecha_mount_center_mesh}"
+      mesh_scale="${mesh_scale_milimeters}"
+      parent="gripper_mecha_mount_stretcher_link"
+      mass="1e-3"
+      ixx="1e-5"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="1e-5"
+      iyz="0.0"
+      izz="1e-5"
+      color="Blue">
+    <origin xyz="-0.193883 0.0 -0.015" rpy="${rad180} 0 0" />
+    </xacro:visual_macro_with_collision_joint_fixed>
+  </xacro:if>
+
+  <!-- gripper mecha mount stretcher {-->
+  <xacro:if value="${optionals['enable_mechanic_gripper']}">
+    <xacro:visual_macro_with_collision_joint
+      robot_namespace="${namespace}"
+      name="gripper_mecha_mount_stretcher"
+      mesh_file="${gripper_mecha_mount_stretcher_mesh}"
+      mesh_scale="${mesh_scale_milimeters}"
+      parent="base_link"
+      joint="continuous"
+      axis="0 1 0"
+      damping="0.7"
+      friction="0.7" 
+      upper="0.04"
+      lower="0.0"
+      effort="20"
+      velocity="0.2"
+      mass="0.1"
+      ixx="0.17"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="0.17"
+      iyz="0.0"
+      izz="0.17"
+      color="Blue">
+    <origin xyz="0.0 0.0 -0.130498" rpy="0 ${rad180} 0" />
+    </xacro:visual_macro_with_collision_joint>
+  </xacro:if>
+
+  <!-- gripper mecha mount battery {-->
+  <xacro:if value="${optionals['enable_mechanic_gripper']}">
+    <xacro:visual_macro_with_collision_joint_fixed
+      robot_namespace="${namespace}"
+      name="gripper_mecha_mount_battery"
+      mesh_file="${gripper_mecha_mount_battery_mesh}"
+      mesh_scale="${mesh_scale_milimeters}"
+      parent="base_link"
+      mass="1e-3"
+      ixx="1e-5"
+      ixy="0.0"
+      ixz="0.0"
+      iyy="1e-5"
+      iyz="0.0"
+      izz="1e-5"
+      color="Blue">
+    <origin xyz="0.0 0.0 -0.095535" rpy="0 0 ${rad180}" />
+    </xacro:visual_macro_with_collision_joint_fixed>
+  </xacro:if>
+
+<!-- Transmission of  3 Joints (for add more joints change in component_snippets.xacro) {-->
+
+<xacro:if value="${optionals['enable_mechanic_gripper']}">
+  <xacro:transmissions_joints
+      robot_namespace="${namespace}"
+      name1="gripper_mecha_mount_stretcher"
+      name2="gripper_mecha_left"
+      name3="gripper_mecha_right">
+  </xacro:transmissions_joints>
+</xacro:if>
+  
+
+<!--}-->
+
+<!-- ______________________________________________________________________________________________________________________________________________________________________ -->

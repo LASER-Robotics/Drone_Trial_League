@@ -1,0 +1,20 @@
+uav1:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 20
+
+  gripper_mecha_mount_stretcher_joint_controller:
+    type: velocity_controllers/JointPositionController
+    joint: gripper_mecha_mount_stretcher_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+    
+  gripper_mecha_right_joint_controller:
+    type: velocity_controllers/JointPositionController
+    joint: gripper_mecha_right_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+    
+  gripper_mecha_left_joint_controller:
+    type: velocity_controllers/JointPositionController
+    joint: gripper_mecha_left_joint
+    pid: {p: 1.0, i: 0.0, d: 0.0}
+      

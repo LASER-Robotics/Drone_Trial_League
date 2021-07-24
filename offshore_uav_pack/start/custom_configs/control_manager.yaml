@@ -1,0 +1,17 @@
+safety:
+
+  min_thrust_null_tracker: 0.10 # [] minimum thrust when not flying
+
+  tilt_limit:
+
+    eland:
+      enabled: false
+
+    disarm:
+      enabled: false
+
+  yaw_error_eland:
+    enabled: false
+
+  tilt_error_disarm:
+    enabled: false

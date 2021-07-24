@@ -1,0 +1,5 @@
+<library path="lib/libControllerG">
+  <class name="controllerg/ControllerG" type="controllerg::ControllerG" base_class_type="nodelet::Nodelet">
+    <description>ControllerG nodelet</description>
+  </class>
+</library>
