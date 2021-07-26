@@ -1,6 +1,28 @@
-This is a tutorial of how to insert gripper and realsense on MRS system:
+Esse é o tutorial de como inserir o "gripper" no sistema MRS:
 
-- In each of the files has instructions to the directory and part of the file you
-needs to add the new lines.
-- Notes that meshes inside "meshes" folder has the 3d models, so you will just put the files in the folder, the others you need to add lines in the exists files.
-- Remember that in the and of the process compile the mrs folder using " catkin build " in the terminal
+- Em cada linha, e abaixo, está os arquivos e as linhas que devem ser adicionadas em cada um deles;
+- Note que os arquivos de modelos 3d na pasta "meshes", é apenas os arquivos, então serão colocados esses arquivos em uma pasta especifica;
+- Lembre-se que depois de executar o processo, compilar o ambiente do sistema MRS, com o comando "catkin build" no terminal.
+
+'''
+spawner_params.yaml
+'''
+- Coloque as linhas desse arquivo no arquivo ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/config/spawner_params.yaml
+
+'''
+component_snippets.xacro
+'''
+- Coloque as linhas desse arquivo no arquivo ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/component_snippets.xacro
+- Você deve colocar na região abaixo o macro "Macro for visualization of mash with collision" (deve está próximo a linha 160)
+
+'''
+t650.xacro
+'''
+- Coloque as linhas desse arquivo no arquivo ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/t650.xacro
+- Na primeira parte, procure por " holders " e adicione esta linha abaixo da ultima "xacro ::property" (deve está próximo a linha 98)
+- Na segunda parte, procure por " UVDAR mount " e adicione esta linha abaixo da ultima "xacro ::property" (deve está próximo a linha 1350)
+
+'''
+Pasta meshes
+'''
+- Coloque estes arquivos na pasta ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/meshes/tarot/t650
