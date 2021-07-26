@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!-- Put this lines in this file ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/t650.xacro -->
-<!-- Look for " holders " and add this lines below the last xacro property (something around line 98) -->
+<!-- Coloque as linhas desse arquivo no arquivo ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/t650.xacro -->
+<!-- Procure por " holders " e adicione esta linha abaixo da ultima "xacro ::property" (deve está proximo a linha 98)) -->
 
 <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
 
@@ -13,7 +13,7 @@
 <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
 
 
-<!-- Look for " UVDAR mount " and add this lines below this xacro (something around line 1350) -->
+<!-- Procure por " UVDAR mount " e adicione esta linha abaixo da ultima "xacro ::property" (deve está proximo a linha 1350)) -->
 
 <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
 
