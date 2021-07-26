@@ -1,4 +1,4 @@
-Instruções de instalação:
+## Instruções de instalação:
 
   - Siga as instrunções da seção de instalação do link: https://github.com/ctu-mrs/mrs_uav_system;
   - Instale as bibliotescas: 
@@ -21,7 +21,7 @@ sudo apt-get install libcgal-dev
 ```
   - Apos o gazebo iniciar, vá até a aba spawn, no terminal aberto pelo comando, você pode altenar a aba usando a tecla "shift + setas", na aba spawn va para a janela de baixo usando o comando "alt + setas", nessa janela aperte a seta para cima e enter, para utilizar um comando pre-carregado, esse comando roda todos os launchs de spawns, comentados na instruções de utilização (fases), aguarde os objetos spawnarem e aperte o botão play, na parte inferior, do gazebo. Sua simulação esta iniciada.
 
-Instruções de utilização ( Fases ):
+## Instruções de utilização ( Fases ):
 
   - As fases possuem pastas separadas dentro da pasta offshore_uav_pack, cada pasta start_fase_X possui os arquivos de iniciação do tmux e configuração do sistema MRS, para utilizar estes inicializadores, basta acessar a pasta pelo terminal, e utilizar o comando executado na instalação:
 ```
@@ -82,7 +82,7 @@ Instruções de utilização ( Fases ):
     ```
       Lembre-se que as caixas devem esta em cima dos barcos, logo se alterar a posição dos barcos lembre-se de ajustar a posição das caixas.
 
-Instruções de utilização ( Controlador da garra ):
+## Instruções de utilização ( Controlador da garra ):
 
   - O controlador da garra é iniciado pelo comando
     ```
@@ -98,7 +98,7 @@ Instruções de utilização ( Controlador da garra ):
     - "up" - Executa o reposicionamento da garra para a posição aonde esta acima do trem de pouso;
     - "Down" - Executa o reposicionamento da garra para a posição aonde esta abaixo do trem de pouso;
 
-Instruções gerais:
+## Instruções gerais:
   - Para demais detalhes sobre os arquivos, é recomendado assistir o video descritivo do pacote da competição do ano passado, que esta no link: https://youtu.be/aM0vAr_YDT8
   - Para alterar a posição de spawn do drone acesse o arquivo uav1_pos.yaml na pasta start
 
