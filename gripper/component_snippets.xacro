@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!-- Put this lines in this file ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/component_snippets.xacro -->
-<!-- Look for " Macro for visualization of mash with collision " and put this lines below this macro (something around line 160) -->
+<!-- Coloque as linhas desse arquivo no arquivo ~/mrs_workspace/src/simulation/ros_packages/mrs_simulation/models/mrs_robots_description/urdf/component_snippets.xacro -->
+<!-- A primeira parte, você deve colocar na região abaixo o macro "Macro for visualization of mash with collision" (deve está em algo proximo a linha 160) -->
 <!-- ______________________________________________________________________________________________________________________________________________________________________ -->
 
 
