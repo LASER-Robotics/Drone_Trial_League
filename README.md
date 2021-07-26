@@ -13,7 +13,7 @@ sudo apt-get install libcgal-dev
   - Faça um catkin build no workspace;
   - Usando o terminal acesse 
 ```
-  /home/(USER)/workspace/src/Petrobras_Competition-Offshore/offshore_uav_pack/start;
+  /home/(USER)/workspace/src/Drone_Trial_League/offshore_uav_pack/start;
 ```
   - Rode o comando abaixo no terminal para testar a simulação:
 ```
@@ -31,7 +31,7 @@ Instruções de utilização ( Fases ):
   - A alteração das posições dos objetos são feitas em dois arquivos:
     - O primeiro arquivo é o faseX.world, localizado na pasta
     ```
-    ~/workspace/src/Petrobras_Competition-Offshore/asv_wave_sim_gazebo/worlds 
+    ~/workspace/src/Drone_Trial_League/asv_wave_sim_gazebo/worlds 
     ```
       Dentro desses arquivos você encontra todos os modelos que são inseridos no mundo, junto com as suas posições
     ```
@@ -48,7 +48,7 @@ Instruções de utilização ( Fases ):
 
     - O segundo arquivo é o spawn_obj_wamvX.launch, localizado na pasta
     ```
-    ~/workspace/src/Petrobras_Competition-Offshore/offshore_uav_pack/launch
+    ~/workspace/src/Drone_Trial_League/offshore_uav_pack/launch
     ```
       Dentro desses arquivos você encontra a posição especifica de um determinado objeto e onde ele deve ser spawnado, abaixo segue a referencia dos arquivos:
       - spawn_equip_wamv1.launch - Spawna a caixa com qrcode, no wamv 1
