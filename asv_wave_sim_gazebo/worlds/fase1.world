@@ -119,6 +119,15 @@
         <pose frame=''>45 10 2.6 0 0 0</pose>
       </include>
     </model>
+
+    <!-- THE LAND BASE MODEL 3 -->
+    <model name="land_base_3">
+      <include>
+        <uri>model://base_land</uri>
+        <!-- Pose ( x y z r p y ) -->
+        <pose frame=''>-54 -35 9.85 0 0 0</pose>
+      </include>
+    </model>
     
     <!-- THE PIPE MODEL -->
     <model name="pipe_oil_offshore">
