@@ -143,7 +143,7 @@
       <include>
         <uri>model://measure_gas_high_base_left</uri>
           <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>45 10 2.7 0 -0 0</pose>
+        <pose frame=''>45 10 2.52 0 -0 0</pose>
       </include>
     </model>
 
@@ -152,7 +152,7 @@
       <include>
         <uri>model://measure_gas_high_base_right</uri>
           <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>-19.5 -21 13.712 0 -0 0</pose>
+        <pose frame=''>-19.5 -21 13.54 0 -0 0</pose>
       </include>
     </model>
 

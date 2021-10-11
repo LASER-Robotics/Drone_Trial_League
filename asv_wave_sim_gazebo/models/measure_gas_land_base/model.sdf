@@ -28,10 +28,10 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0 0 -0.003 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.11 0.11 0.002</size>
+            <size>0.11 0.11 0.02</size>
           </box>
         </geometry>
         <surface>
