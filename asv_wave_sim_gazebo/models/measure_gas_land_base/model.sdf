@@ -3,14 +3,14 @@
   <model name='measure_gas_land_base'>
     <link name='link_2'>
       <inertial>
-        <mass>0.05</mass>
+        <mass>10</mass>
         <inertia>
-          <ixx>1.00</ixx>
-          <ixy>1.00</ixy>
-          <ixz>1.00</ixz>
-          <iyy>1.00</iyy>
-          <iyz>1.00</iyz>
-          <izz>1.00</izz>
+          <ixx>0.01</ixx>
+          <ixy>0.01</ixy>
+          <ixz>0.01</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0.01</iyz>
+          <izz>0.01</izz>
         </inertia>
       </inertial>
       <pose frame=''>0 0 0 0 -0 0</pose>
@@ -37,8 +37,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>100.1</mu>
+              <mu2>100.1</mu2>
               <fdir1>0 0 0</fdir1>
               <slip1>0</slip1>
               <slip2>0</slip2>
